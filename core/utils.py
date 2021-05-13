@@ -3,8 +3,6 @@ class dataclass:
     import pickle
     try:
       File=open("dicteggs.pkl","rb")#file must be exist before
-      
-    
       self.eggs = pickle. load(File)
       File.close()
       self.first=False
@@ -41,9 +39,9 @@ class initial:
       "class":1,
       "list":1,
       "import":1,
-      "":1,
-      "":1,
-      "":1,
+      "constructor":1,
+      "return":1,
+      "list":1,
       "":1,
       "":1,
       "":1,

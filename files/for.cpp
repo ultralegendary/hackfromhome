@@ -5,6 +5,6 @@ int main()
     
     cout<<"Numbers from 0 to 9: ";
     for(int i=0;i<10;i++)
-    cout<<i<<' ';
+    cout<<i*10<<'\n';
     return 0;
 }
