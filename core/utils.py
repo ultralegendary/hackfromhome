@@ -1,8 +1,57 @@
+class dataclass:
+  def __init__(self):
+    import pickle
+    try:
+      File=open("dicteggs.pkl","rb")#file must be exist before
+      
+    
+      self.eggs = pickle. load(File)
+      File.close()
+      self.first=False
+    except:
+      d=initial()
+      self.eggs=d.eggs
+      f=open("dicteggs.pkl","wb")
+      pickle.dump(self.eggs,f)
+      f.close()
+      self.first=True
 
 
-from termcolor import colored,cprint
+    
+
+  def dict_file(self):
+    import pickle
+    File=open("dicteggs.pkl","wb")
+    pickle.dump(self.eggs,File)
+    File.close()
+
+
+class initial:
+  def __init__(self):
+    self.eggs={
+      "print":1,
+      "if":1,
+      "elif":1,
+      "else":1,
+      "function":1,
+      "recurssion":1,
+      "for":1,
+      "nested_for":1,
+      "comment_line":1,
+      "class":1,
+      "list":1,
+      "import":1,
+      "":1,
+      "":1,
+      "":1,
+      "":1,
+      "":1,
+      "":1,
+      "":1,
+      "":1,}
+
 import time
-
+#https://patorjk.com/software/taag/#p=display&f=Graffiti&t=congrats
 egg= '''                                        
                                 ████████                                  
                               ██        ██                                
@@ -24,7 +73,7 @@ egg= '''
 egg1='''
         .-"-.
       .'=^=^='.
-     /=^=^=^=^=\
+     /=^=^=^=^=\\
     :^=^=^=^=^=^;
     |^=^=^=^=^=^|
     :^=^=^=^=^=^:
@@ -36,6 +85,7 @@ design='''.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:
 def welcome():
     slow(design)
 
+from termcolor import cprint
 
 def slow(t,*args, speed=130,**kwargs):
     for i in t:

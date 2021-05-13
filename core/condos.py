@@ -1,1 +1,0 @@
-from eggs import eggs
