@@ -9,6 +9,7 @@ import os
 from tkinter import *
 from tkinter.font import BOLD
 from tkinter import messagebox
+from playsound import playsound
 import shlex,subprocess
 
 prtip=''
@@ -24,6 +25,7 @@ def main():
             exec(inp)
         except Exception as e:
             lbl.config(text="Invalid python syntax!\n\tTry again!")
+            playsound('sounds/gameover.wav')
             return
         
         global prtip
@@ -43,7 +45,7 @@ def main():
             f.close()
             prtip+=pp.prot["print"]
             
-            
+            playsound('sounds/coin.mp3')
             lbl.config(text=s)
 
             eg.eggs['print']=0
@@ -58,6 +60,7 @@ def main():
             prtip+=pp.prot["if"]
             f.close()
             lbl.config(text=s)
+            playsound('sounds/coin.mp3')
             eg.eggs['if']=0
             eg.dict_file()
             
@@ -69,6 +72,7 @@ def main():
             prtip+=pp.prot["elif"]
             f.close()
             lbl.config(text=s)
+            playsound('sounds/coin.mp3')
             eg.eggs['elif']=0
             eg.dict_file()
 
@@ -81,6 +85,7 @@ def main():
             prtip=pp.prot["else"]
             f.close()
             lbl.config(text=s)
+            playsound('sounds/coin.mp3')
             eg.eggs['else']=0
             eg.dict_file()
             
@@ -92,6 +97,7 @@ def main():
             prtip=pp.prot["for"]
             f.close()
             lbl.config(text=s)
+            playsound('sounds/coin.mp3')
             eg.eggs['for']=0
             eg.dict_file()
         if eg.eggs['nested_for'] and re.search("for.*\s*for", inp):
@@ -102,6 +108,7 @@ def main():
             
             f.close()
             lbl.config(text=s)
+            playsound('sounds/coin.mp3')
             eg.eggs['for']=0
             eg.dict_file()
 
@@ -114,6 +121,7 @@ def main():
             s+='\n\nYour task now : to use function to return multiplication of two numbers using return statement'
             f.close()
             lbl.config(text=s)
+            playsound('sounds/coin.mp3')
             eg.eggs['function']=0
             eg.dict_file()
             
@@ -125,6 +133,7 @@ def main():
             s+='\n\nYour task now : to use comment line '
             lbl.config(text=s)
             prtip=pp.prot['comment_line']
+            playsound('sounds/coin.mp3')
             f.close()
             eg.eggs['comment_line']=0
             eg.dict_file()
@@ -134,6 +143,7 @@ def main():
             s+=f.read()
             s+='\n\nYour task now : to define a class with one variable and one function '
             lbl.config(text=s)
+            playsound('sounds/coin.mp3')
             f.close()
             eg.eggs['class']=0
             eg.dict_file()
@@ -143,6 +153,7 @@ def main():
             s+=f.read()
             s+='\n\nYour task now : to define a function inside a class'
             lbl.config(text=s)
+            playsound('sounds/coin.mp3')
             f.close()
             eg.eggs['constructor']=0
             eg.dict_file()
@@ -159,8 +170,10 @@ def main():
             output=run(f"g++ a.cpp && a.exe")
 
             lbl.config(text="Congrats, your code has been accepted!\nOUTPUT:\n"+output)
+            playsound('sounds/powerup.wav')
             #messagebox.showinfo('output', output)
         except Exception as e:
+            playsound('sounds/gameover.mp3')
             messagebox.showinfo('Error', e)
             
 
@@ -187,7 +200,7 @@ def main():
 
 
     root=Tk()
-    heading = Label(root, text="project", font=("Times new roman", 40, BOLD))
+    heading = Label(root, text="Code from Code!", font=("Times new roman", 40, BOLD))
     heading.place(x=900, y=20)
 
     protip=Label(root,text="",font=("",16))
@@ -209,7 +222,7 @@ def main():
     submitButton2 = Button(root, text="Compile", fg="black",command=printInput)
     submitButton2.place(x=1200, y=460)
 
-    lbl=Label(root,text='''welcome to our project\nType your python code in the above box and press run
+    lbl=Label(root,text='''welcome to our Code from Code\nType your python code in the above box and press run
     \nUse The right side box to compile c++ code''',font=("Times new roman",13),justify=LEFT,anchor='w')
     lbl.place(x=20,y=400,width=600)
 
@@ -236,4 +249,3 @@ def main():
 
 if __name__=="__main__":
     main()
- 
