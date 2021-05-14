@@ -1,0 +1,8 @@
+Python 3.5+
+MinGW g++
+
+Python modules:
+    tkinter
+    subprocess
+    sounds
+    

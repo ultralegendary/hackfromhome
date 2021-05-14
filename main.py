@@ -157,8 +157,7 @@ def main():
             f.close()
             eg.eggs['constructor']=0
             eg.dict_file()
-        print(prtip)
-
+        
 
 
 
@@ -200,10 +199,10 @@ def main():
 
 
     root=Tk()
-    heading = Label(root, text="Code from Code!", font=("Times new roman", 40, BOLD))
+    heading = Label(root, text="CodeWITHCode", font=("Times new roman", 40, BOLD))
     heading.place(x=900, y=20)
 
-    protip=Label(root,text="",font=("",16))
+    protip=Label(root,text="",font=("",14),justify=LEFT,anchor='w')
     protip.place(x=700,y=500)
 
     textbox1 = Text(root, bg="black", fg="white")
@@ -222,7 +221,7 @@ def main():
     submitButton2 = Button(root, text="Compile", fg="black",command=printInput)
     submitButton2.place(x=1200, y=460)
 
-    lbl=Label(root,text='''welcome to our Code from Code\nType your python code in the above box and press run
+    lbl=Label(root,text='''welcome to our CodeWITHCode\nType your python code in the above box and press run
     \nUse The right side box to compile c++ code''',font=("Times new roman",13),justify=LEFT,anchor='w')
     lbl.place(x=20,y=400,width=600)
 
@@ -233,15 +232,6 @@ def main():
 
 
 
-    '''while True:
-    inp=input('>>>')
-    if inp and inp[-1]==':':
-            inp+='\n'
-            i=' '
-            while i and i[0]==' ':
-                i=input("...")
-                inp+=i+'\n'
-    '''
 
 
 

@@ -5,9 +5,10 @@ void function1()
 cout<<"Hello function one \n";
 
 }
-void function2(int a)
+int function2(int a)
 {
-    cout<<"Hello function two\n";
+    cout<<"Hello function two with return statement\n";
+    return a/10;
 }
 int main()
 {

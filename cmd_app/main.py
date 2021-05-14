@@ -188,7 +188,7 @@ def main():
 
 def writecpp():
         s=''
-        print("Enter your c++ code: (press enter 3 times tosubmit your code)\n")
+        print("Enter your c++ code: (press enter 3 times to submit your code)\n")
         s=input()
         while not(len(s)>3 and s[-3:]=='\n\n\n'):
             s+='\n'+input()
