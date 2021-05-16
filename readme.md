@@ -4,4 +4,6 @@ We have made this to save your time in learning a new language while you alredy 
 
 # how to run?
 run `main.py` for tkinter app or  
-`cmd_app/main.py` for commend line application
+`cmd_app/main.py` for commend line application  
+</br>
+```This repo will be privite soon```
